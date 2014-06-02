@@ -26,6 +26,21 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
 
+group :development do 
+  gem 'quiet_assets' 
+  gem 'better_errors'
+  gem 'meta_request' # https://chrome.google.com/webstore/detail/railspanel/gjpfobpafnhjhbajcjgccbbdofdckggg
+  gem 'binding_of_caller' #Going up the stack binding.of_caller(2).eval('var =:hello')
+  gem 'awesome_print' # In the rails console: ap Account.limit(2).all
+  gem 'pry-rails' # Uses pry instead of irb for the console
+  gem 'pry-byebug'
+end
+
+group :development, :test do 
+  gem 'rspec-rails'
+end
+
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
