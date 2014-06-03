@@ -1,0 +1,10 @@
+# hello_world_spec.rb
+
+require 'spec_helper'
+
+feature 'User wants a greeting' do
+  scenario 'says Hello World' do
+    visit helloworld_path
+    expect(page).to have_css 'h1', :text => 'Hello World', :visible => true
+  end
+end
