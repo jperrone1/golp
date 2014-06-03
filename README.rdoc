@@ -1,4 +1,12 @@
-== README
+== README 
+
+In this lesson I set up the structure of a new RoR app, named golp. 
+
+I added several gems. 
+
+Better Errors provides more useful error messages than the normal Rails error page. 
+
+
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
