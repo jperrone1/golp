@@ -1,28 +1,26 @@
-== README
+== README 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+In this lesson I set up the structure of a new RoR app, named golp. 
 
-Things you may want to cover:
+I added several gems:  
 
-* Ruby version
+Better Errors provides more useful error messages than the normal Rails error page. 
 
-* System dependencies
+Quiet Assets suppresses messages in the development log to make it easier to find important messages. 
 
-* Configuration
+MetaRequest is a supporting gem for Rails Panel, which is a Google Chrome app. 
 
-* Database creation
+Awesome Print is a Ruby library that prints Ruby objects in color with proper indentation.  It can also be used to format Pry if the following code is added to your ~/.pryrc
+require "awesome_print"
+AwesomePrint.pry! 
 
-* Database initialization
+Pry Rails works with (and depends on) Pry.  It makes the rails console open Pry. 
 
-* How to run the test suite
+Binding Of Caller allows grabing bindings from arbitrarily far up the call stack to assist with debugging. 
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Pry Byebug allows stepping through code in Pry and some other debugging functions. 
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+In Level 2 I added a route, controller, action, and view that generates a "Hello World" webpage. I also added an RSpec test that uses Capybara to test the feature that puts "Hello World" on the page. Capybara simulates a user of your website.  It can be used with an actual website, or with a headless browser like Phantom. 
+
+spec_helper configures the testing environment. 
