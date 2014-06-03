@@ -2,35 +2,22 @@
 
 In this lesson I set up the structure of a new RoR app, named golp. 
 
-I added several gems. 
+I added several gems:  
 
 Better Errors provides more useful error messages than the normal Rails error page. 
 
+Quiet Assets suppresses messages in the development log to make it easier to find important messages. 
+
+MetaRequest is a supporting gem for Rails Panel, which is a Google Chrome app. 
+
+Awesome Print is a Ruby library that prints Ruby objects in color with proper indentation.  It can also be used to format Pry if the following code is added to your ~/.pryrc
+require "awesome_print"
+AwesomePrint.pry! 
+
+Pry Rails works with (and depends on) Pry.  It makes the rails console open Pry. 
+
+Binding Of Caller allows grabing bindings from arbitrarily far up the call stack to assist with debugging. 
+
+Pry Byebug allows stepping through code in Pry and some other debugging functions. 
 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
