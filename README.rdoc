@@ -24,3 +24,5 @@ Pry Byebug allows stepping through code in Pry and some other debugging function
 In Level 2 I added a route, controller, action, and view that generates a "Hello World" webpage. I also added an RSpec test that uses Capybara to test the feature that puts "Hello World" on the page. Capybara simulates a user of your website.  It can be used with an actual website, or with a headless browser like Phantom. 
 
 spec_helper configures the testing environment. 
+
+In Level 4, I used scaffold to create the Thing model and related files.  This is useful as a reference for the correct methods, strong parameters, etc., but not recommended in general, because it creates methods that may not be relevant, and even dangerous, such as the delete method. 
