@@ -9,6 +9,11 @@ Rails.application.routes.draw do
 
   root 'pages#helloworld'
 
+  devise_scope :user do
+  get "sign_in", to: "things#new"
+  get "sign_out", to: "pages#helloworld"
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -33,6 +33,11 @@
           <li class="active"><a href="#">Home</a></li>
           <li><%= link_to "Hello World", helloworld_path %>
           <li><%= link_to "Thing", things_path %>
+          <% if user_signed_in? %>
+            <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+            <% else %>
+            <li><%= link_to 'Sign Up', new_user_registration_path %></li>
+            <% end %>
 <!--           <li><a href="#about">About</a></li>
           <li><a href="#contact">Contact</a></li> -->
         </ul>
