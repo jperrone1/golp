@@ -39,6 +39,8 @@ end
 group :development, :test do 
   gem 'rspec-rails', '2.99'
   gem 'capybara'
+  gem 'factory_girl_rails', '~> 4.0'
+  gem 'rspec-activemodel-mocks'
 end
 
 gem 'bootstrap-sass'
