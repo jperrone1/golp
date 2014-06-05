@@ -7,18 +7,21 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-Thing.find_or_create_by(name: "Buy a kayak.", description: "Get a larger one than the one I have now.")
+# Thing.find_or_create_by(name: "Buy a kayak.", description: "Get a larger one than the one I have now.")
 
-Thing.find_or_create_by(name: "Weed the side steps.", description: "Do it while the soil is still soft.")
+# Thing.find_or_create_by(name: "Weed the side steps.", description: "Do it while the soil is still soft.")
 
-Thing.find_or_create_by(name: "Read the problem book.", description: "Go through the coding interview problems and learn how to do them.")
+# Thing.find_or_create_by(name: "Read the problem book.", description: "Go through the coding interview problems and learn how to do them.")
 
-Thing.find_or_create_by(name: "Cut down on salt.", description: "Put away my salt shaker and buy Open Nature chickens.")
+# Thing.find_or_create_by(name: "Cut down on salt.", description: "Put away my salt shaker and buy Open Nature chickens.")
 
 myArray = ["flexitarian", "tattooed", "occupy", "meggings", "fingerstache", "wayfarers", "Neutra", "banjo", "fixie", "chambray", "four", "loko", "small batch", "literally", "vegan", "messenger bag", "ethical", "authentic", "Blue Bottle", "Kickstarter", "fap", "before they sold out", "single-origin", "coffee", "mlkshk", "irony", "slow-carb", "umami", "selvage", "farm-to-table", "locavore", "gluten-free", "flannel", "narwhal", "Kickstarter", "sustainable", "mlkshk", "keffiyeh", "keytar", "raw denim", "Godard", "fanny pack", "literally", "put a bird on it", "pickled", "chambray", "irony" "tattooed", "hoodie", "PBR mixtape", "put a bird on it", "McSweeney's", "hella", "mlkshk", "hashtag", "quinoa", "blog", "vinyl", "8-bit", "bitters", "disrupt", "biodiesel", "Shoreditch", "seitan", "YOLO", "blog"]
 
+test_user = User.create(email: "p@p.com", password: "12345678", password_confirmation: "12345678")
+
 if (Thing.all.count < 200)
   200.times do 
-    Thing.create(name: myArray.sample, description: Forgery(:lorem_ipsum).words(30, :random => true))
+    # Thing.create(name: myArray.sample, description: Forgery(:lorem_ipsum).words(30, :random => true))
+    test_user.things.create(name: myArray.sample, description: Forgery(:lorem_ipsum).words(30, :random => true))
   end
 end
