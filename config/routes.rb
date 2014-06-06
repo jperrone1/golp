@@ -7,12 +7,50 @@ Rails.application.routes.draw do
 
   get '/helloworld', to: 'pages#helloworld', as: 'helloworld'
 
+  get '/my_things', to: 'things#my_things', as: 'my_things'
+
   root 'pages#helloworld'
 
   devise_scope :user do
   get "sign_in", to: "things#new"
   get "sign_out", to: "pages#helloworld"
   end
+
+end 
+
+# Routes as of 6/5/14 2:16 PM: 
+
+# Jeffs-MacBook-Pro-2:golp Jeff$ rake routes
+#                   Prefix Verb   URI Pattern                    Controller#Action
+#         new_user_session GET    /users/sign_in(.:format)       devise/sessions#new
+#             user_session POST   /users/sign_in(.:format)       devise/sessions#create
+#     destroy_user_session DELETE /users/sign_out(.:format)      devise/sessions#destroy
+#            user_password POST   /users/password(.:format)      devise/passwords#create
+#        new_user_password GET    /users/password/new(.:format)  devise/passwords#new
+#       edit_user_password GET    /users/password/edit(.:format) devise/passwords#edit
+#                          PATCH  /users/password(.:format)      devise/passwords#update
+#                          PUT    /users/password(.:format)      devise/passwords#update
+# cancel_user_registration GET    /users/cancel(.:format)        devise/registrations#cancel
+#        user_registration POST   /users(.:format)               devise/registrations#create
+#    new_user_registration GET    /users/sign_up(.:format)       devise/registrations#new
+#   edit_user_registration GET    /users/edit(.:format)          devise/registrations#edit
+#                          PATCH  /users(.:format)               devise/registrations#update
+#                          PUT    /users(.:format)               devise/registrations#update
+#                          DELETE /users(.:format)               devise/registrations#destroy
+#                   things GET    /things(.:format)              things#index
+#                          POST   /things(.:format)              things#create
+#                new_thing GET    /things/new(.:format)          things#new
+#               edit_thing GET    /things/:id/edit(.:format)     things#edit
+#                    thing GET    /things/:id(.:format)          things#show
+#                          PATCH  /things/:id(.:format)          things#update
+#                          PUT    /things/:id(.:format)          things#update
+#                          DELETE /things/:id(.:format)          things#destroy
+#               helloworld GET    /helloworld(.:format)          pages#helloworld
+#                     root GET    /                              pages#helloworld
+#                  sign_in GET    /sign_in(.:format)             things#new
+#                 sign_out GET    /sign_out(.:format)            pages#helloworld
+
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -68,4 +106,3 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-end

@@ -4,6 +4,8 @@ class ThingsController < ApplicationController
 
   before_action :set_thing, only: [:show, :edit, :update, :destroy]
 
+  before_action :check_user, only: [:edit, :destroy]
+
   # GET /things
   # GET /things.json
   def index
@@ -27,7 +29,8 @@ class ThingsController < ApplicationController
   # POST /things
   # POST /things.json
   def create
-    @thing = Thing.new(thing_params)
+    # @thing = Thing.new(thing_params)
+    @thing = current_user.things.new(thing_params)
 
     respond_to do |format|
       if @thing.save
@@ -64,7 +67,14 @@ class ThingsController < ApplicationController
     end
   end
 
+  def my_things
+    @things = current_user.things.all 
+  end
+
+
+
   private
+
     # Use callbacks to share common setup or constraints between actions.
     def set_thing
       @thing = Thing.find(params[:id])
@@ -73,5 +83,13 @@ class ThingsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def thing_params
       params.require(:thing).permit(:name, :description)
+    end
+
+    # This method has to come after the set_thing method, so that @thing will be defined.
+    def check_user
+      if @thing.user_id != current_user.id  
+        flash[:errors]="You don't have permission to do that." 
+        redirect_to things_path
+      end
     end
 end
